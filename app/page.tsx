@@ -8,6 +8,10 @@ import { RecognitionSchedule } from '@/components/recognition-schedule'
 import { ComplianceSummary } from '@/components/compliance-summary'
 import { RevenueDashboard } from '@/components/revenue-dashboard'
 import { MetricsComparison } from '@/components/metrics-comparison'
+import { FeatureFlagDebugPanel } from '@/components/feature-flag-debug-panel'
+import { ABTestDebugPanel } from '@/components/ab-test-debug-panel'
+import { FeedbackWidget } from '@/components/feedback-widget'
+import { ValidationBadge } from '@/components/validation-badge'
 import { formatCurrency } from '@/lib/format'
 
 type Step = 'inference' | 'compliance' | 'dashboard'
@@ -140,8 +144,9 @@ export default function Page() {
             </div>
 
             {/* Recognition Schedule Table */}
-            <div className="bg-white rounded-lg border border-border p-6 shadow-sm">
+            <div className="bg-white rounded-lg border border-border p-6 shadow-sm space-y-4">
               <RecognitionSchedule contractTerms={contractTerms} />
+              <ValidationBadge contractTerms={contractTerms} />
             </div>
 
             {/* Next Step Button */}
@@ -256,6 +261,11 @@ export default function Page() {
           </p>
         </div>
       </footer>
+
+      {/* Floating widgets */}
+      <FeedbackWidget />
+      <FeatureFlagDebugPanel />
+      <ABTestDebugPanel />
     </div>
   )
 }
