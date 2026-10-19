@@ -90,11 +90,11 @@ export function ContractInference({ onTermsChange }: ContractInferenceProps) {
           <select
             value={terms.billingFrequency}
             onChange={(e) => handleChange('billingFrequency', e.target.value)}
-            className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent bg-white"
+            className="w-full px-3 py-2 border border-border rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent bg-white"
           >
-            <option value="quarterly">Quarterly</option>
-            <option value="monthly">Monthly</option>
-            <option value="annual">Annual</option>
+            <option value="quarterly" className="text-gray-900">Quarterly</option>
+            <option value="monthly" className="text-gray-900">Monthly</option>
+            <option value="annual" className="text-gray-900">Annual</option>
           </select>
         </div>
 
@@ -105,11 +105,11 @@ export function ContractInference({ onTermsChange }: ContractInferenceProps) {
           <select
             value={terms.recognitionMethod}
             onChange={(e) => handleChange('recognitionMethod', e.target.value)}
-            className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent bg-white"
+            className="w-full px-3 py-2 border border-border rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent bg-white"
           >
-            <option value="straight-line">Straight-Line</option>
-            <option value="proportional">Proportional</option>
-            <option value="milestone">Milestone-Based</option>
+            <option value="straight-line" className="text-gray-900">Straight-Line</option>
+            <option value="proportional" className="text-gray-900">Proportional</option>
+            <option value="milestone" className="text-gray-900">Milestone-Based</option>
           </select>
         </div>
       </div>

@@ -168,7 +168,7 @@ export default function Page() {
             <div className="flex justify-between">
               <button
                 onClick={() => setCurrentStep('inference')}
-                className="px-6 py-3 border border-border text-foreground font-semibold rounded-lg hover:bg-muted transition-colors"
+                className="px-6 py-3 border border-border text-gray-900 font-semibold rounded-lg hover:bg-muted transition-colors"
               >
                 ← Back to Inference
               </button>
@@ -201,7 +201,7 @@ export default function Page() {
             <div className="flex justify-between">
               <button
                 onClick={() => setCurrentStep('compliance')}
-                className="px-6 py-3 border border-border text-foreground font-semibold rounded-lg hover:bg-muted transition-colors"
+                className="px-6 py-3 border border-border text-gray-900 font-semibold rounded-lg hover:bg-muted transition-colors"
               >
                 ← Back to Compliance
               </button>

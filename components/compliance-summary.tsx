@@ -65,7 +65,7 @@ export function ComplianceSummary({ contractTerms }: ComplianceSummaryProps) {
           </p>
           <p className="text-blue-800">
             {closePeriod} Recognised Revenue:{' '}
-            <span className="font-semibold text-blue-900">${formatCurrency(q1Revenue)}</span>
+            <span className="font-semibold text-blue-900">${formatCurrency(q1Recognised)}</span>
           </p>
         </div>
       </div>
