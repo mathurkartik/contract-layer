@@ -74,7 +74,7 @@ export function RecognitionSchedule({ contractTerms }: RecognitionScheduleProps)
       <div className="overflow-x-auto">
         <table className="w-full text-xs">
           <thead>
-            <tr className="border-b border-border bg-muted">
+            <tr className="border-b border-gray-200 bg-gray-100">
               <th className="text-left px-3 py-2 font-semibold text-gray-900">Month</th>
               <th className="text-right px-3 py-2 font-semibold text-gray-900">Invoiced</th>
               <th className="text-right px-3 py-2 font-semibold text-gray-900">Recognised</th>
@@ -85,8 +85,8 @@ export function RecognitionSchedule({ contractTerms }: RecognitionScheduleProps)
             {schedule.map((row, idx) => (
               <tr
                 key={idx}
-                className={`border-b border-border ${
-                  row.mismatch ? 'bg-amber-50' : 'hover:bg-muted/50'
+                className={`border-b border-gray-200 ${
+                  row.mismatch ? 'bg-amber-50' : 'hover:bg-gray-50'
                 }`}
               >
                 <td className="px-3 py-2 text-gray-900 font-medium">{row.month}</td>
@@ -108,7 +108,7 @@ export function RecognitionSchedule({ contractTerms }: RecognitionScheduleProps)
           </tbody>
         </table>
       </div>
-      <p className="text-xs text-muted-foreground">
+      <p className="text-xs text-gray-500">
         Every row is amber because quarterly invoicing never aligns with monthly recognition — this is the core problem Contract Layer solves.
       </p>
     </div>

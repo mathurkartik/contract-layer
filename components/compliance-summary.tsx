@@ -44,7 +44,7 @@ export function ComplianceSummary({ contractTerms }: ComplianceSummaryProps) {
           <select
             value={closePeriod}
             onChange={(e) => setClosePeriod(e.target.value)}
-            className="px-2 py-1 border border-border rounded text-xs focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent bg-white"
+            className="px-2 py-1 border border-gray-300 rounded text-xs text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white"
           >
             <option>Q1 2024</option>
             <option>Q2 2024</option>
@@ -74,7 +74,7 @@ export function ComplianceSummary({ contractTerms }: ComplianceSummaryProps) {
       <div>
         <button
           onClick={() => setIsExpanded(!isExpanded)}
-          className="flex items-center justify-between w-full p-3 bg-muted rounded-lg hover:bg-muted/80 transition-colors"
+          className="flex items-center justify-between w-full p-3 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors"
         >
           <span className="text-sm font-semibold text-gray-900">
             {closePeriod} Journal Entry
@@ -87,10 +87,10 @@ export function ComplianceSummary({ contractTerms }: ComplianceSummaryProps) {
         </button>
 
         {isExpanded && (
-          <div className="mt-2 border border-border rounded-lg overflow-hidden">
+          <div className="mt-2 border border-gray-200 rounded-lg overflow-hidden">
             <table className="w-full text-xs">
               <thead>
-                <tr className="bg-secondary border-b border-border">
+                <tr className="bg-gray-100 border-b border-gray-200">
                   <th className="text-left px-3 py-2 font-semibold text-gray-900">Account</th>
                   <th className="text-right px-3 py-2 font-semibold text-gray-900">Debit</th>
                   <th className="text-right px-3 py-2 font-semibold text-gray-900">Credit</th>
@@ -98,7 +98,7 @@ export function ComplianceSummary({ contractTerms }: ComplianceSummaryProps) {
               </thead>
               <tbody>
                 {journalEntries.map((entry, idx) => (
-                  <tr key={idx} className="border-b border-border hover:bg-muted/30">
+                  <tr key={idx} className="border-b border-gray-200 hover:bg-gray-50">
                     <td className="px-3 py-2 text-gray-900 font-medium">{entry.account}</td>
                     <td className="text-right px-3 py-2 text-gray-900">
                       {entry.debit > 0 ? `$${formatCurrency(entry.debit)}` : '—'}

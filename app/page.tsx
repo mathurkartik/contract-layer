@@ -55,11 +55,11 @@ export default function Page() {
             onClick={() => setCurrentStep('inference')}
             className={`flex items-center gap-2 pb-2 border-b-2 transition-colors whitespace-nowrap ${
               currentStep === 'inference'
-                ? 'border-accent text-accent'
-                : 'border-transparent text-muted-foreground hover:text-foreground'
+                ? 'border-indigo-600 text-indigo-600'
+                : 'border-transparent text-gray-500 hover:text-gray-900'
             }`}
           >
-            <div className="flex items-center justify-center w-6 h-6 rounded-full bg-accent text-accent-foreground text-xs font-bold">
+            <div className="flex items-center justify-center w-6 h-6 rounded-full bg-indigo-600 text-white text-xs font-bold">
               1
             </div>
             <span className="text-sm font-semibold">Contract Inference</span>
@@ -69,11 +69,11 @@ export default function Page() {
             onClick={() => setCurrentStep('compliance')}
             className={`flex items-center gap-2 pb-2 border-b-2 transition-colors whitespace-nowrap ${
               currentStep === 'compliance'
-                ? 'border-accent text-accent'
-                : 'border-transparent text-muted-foreground hover:text-foreground'
+                ? 'border-indigo-600 text-indigo-600'
+                : 'border-transparent text-gray-500 hover:text-gray-900'
             }`}
           >
-            <div className="flex items-center justify-center w-6 h-6 rounded-full bg-muted text-muted-foreground text-xs font-bold">
+            <div className="flex items-center justify-center w-6 h-6 rounded-full bg-gray-200 text-gray-600 text-xs font-bold">
               2
             </div>
             <span className="text-sm font-semibold">ASC 606 Compliance</span>
@@ -83,11 +83,11 @@ export default function Page() {
             onClick={() => setCurrentStep('dashboard')}
             className={`flex items-center gap-2 pb-2 border-b-2 transition-colors whitespace-nowrap ${
               currentStep === 'dashboard'
-                ? 'border-accent text-accent'
-                : 'border-transparent text-muted-foreground hover:text-foreground'
+                ? 'border-indigo-600 text-indigo-600'
+                : 'border-transparent text-gray-500 hover:text-gray-900'
             }`}
           >
-            <div className="flex items-center justify-center w-6 h-6 rounded-full bg-muted text-muted-foreground text-xs font-bold">
+            <div className="flex items-center justify-center w-6 h-6 rounded-full bg-gray-200 text-gray-600 text-xs font-bold">
               3
             </div>
             <span className="text-sm font-semibold">Revenue Dashboard</span>
@@ -117,19 +117,19 @@ export default function Page() {
                   <h3 className="text-sm font-semibold text-gray-900">Contract Summary</h3>
                   <div className="space-y-2">
                     <div className="flex justify-between items-baseline">
-                      <span className="text-xs text-muted-foreground">Annual TCV:</span>
-                      <span className="text-lg font-bold text-accent">
+                      <span className="text-xs text-gray-500">Annual TCV:</span>
+                      <span className="text-lg font-bold text-indigo-600">
                         ${formatCurrency(contractTerms.tcv)}
                       </span>
                     </div>
                     <div className="flex justify-between items-baseline">
-                      <span className="text-xs text-muted-foreground">Monthly Recognition:</span>
+                      <span className="text-xs text-gray-500">Monthly Recognition:</span>
                       <span className="text-lg font-bold text-gray-900">
                         ${formatCurrency(Math.round(contractTerms.tcv / 12))}
                       </span>
                     </div>
                     <div className="flex justify-between items-baseline">
-                      <span className="text-xs text-muted-foreground">Period:</span>
+                      <span className="text-xs text-gray-500">Period:</span>
                       <span className="text-xs text-gray-900 font-medium">
                         {contractTerms.startDate} to {contractTerms.endDate}
                       </span>
@@ -148,7 +148,7 @@ export default function Page() {
             <div className="flex justify-end">
               <button
                 onClick={() => setCurrentStep('compliance')}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors"
               >
                 Continue to Compliance
                 <span>→</span>
@@ -168,14 +168,14 @@ export default function Page() {
             <div className="flex justify-between">
               <button
                 onClick={() => setCurrentStep('inference')}
-                className="px-6 py-3 border border-border text-gray-900 font-semibold rounded-lg hover:bg-muted transition-colors"
+                className="px-6 py-3 border border-gray-300 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
               >
                 ← Back to Inference
               </button>
 
               <button
                 onClick={() => setCurrentStep('dashboard')}
-                className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity"
+                className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors"
               >
                 View Revenue Dashboard
                 <span>→</span>
@@ -201,7 +201,7 @@ export default function Page() {
             <div className="flex justify-between">
               <button
                 onClick={() => setCurrentStep('compliance')}
-                className="px-6 py-3 border border-border text-gray-900 font-semibold rounded-lg hover:bg-muted transition-colors"
+                className="px-6 py-3 border border-gray-300 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
               >
                 ← Back to Compliance
               </button>
@@ -234,11 +234,11 @@ export default function Page() {
                     a.click()
                     URL.revokeObjectURL(url)
                   }}
-                  className="px-6 py-3 border border-border text-gray-900 font-semibold rounded-lg hover:bg-muted transition-colors"
+                  className="px-6 py-3 border border-gray-300 text-gray-900 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
                 >
                   Export Report
                 </button>
-                <button className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity">
+                <button className="inline-flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white font-semibold rounded-lg hover:bg-indigo-700 transition-colors">
                   <CheckCircle className="w-4 h-4" />
                   Finalize
                 </button>

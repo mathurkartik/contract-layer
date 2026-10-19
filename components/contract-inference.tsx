@@ -52,7 +52,7 @@ export function ContractInference({ onTermsChange }: ContractInferenceProps) {
             type="date"
             value={terms.startDate}
             onChange={(e) => handleChange('startDate', e.target.value)}
-            className="w-full px-3 py-2 border border-border rounded-lg text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
           />
         </div>
 
@@ -64,7 +64,7 @@ export function ContractInference({ onTermsChange }: ContractInferenceProps) {
             type="date"
             value={terms.endDate}
             onChange={(e) => handleChange('endDate', e.target.value)}
-            className="w-full px-3 py-2 border border-border rounded-lg text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
           />
         </div>
 
@@ -78,7 +78,7 @@ export function ContractInference({ onTermsChange }: ContractInferenceProps) {
               type="number"
               value={terms.tcv}
               onChange={(e) => handleChange('tcv', parseInt(e.target.value))}
-              className="flex-1 px-3 py-2 border border-border rounded-lg text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent"
+              className="flex-1 px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 bg-white focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
             />
           </div>
         </div>
@@ -90,7 +90,7 @@ export function ContractInference({ onTermsChange }: ContractInferenceProps) {
           <select
             value={terms.billingFrequency}
             onChange={(e) => handleChange('billingFrequency', e.target.value)}
-            className="w-full px-3 py-2 border border-border rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent bg-white"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white"
           >
             <option value="quarterly" className="text-gray-900">Quarterly</option>
             <option value="monthly" className="text-gray-900">Monthly</option>
@@ -105,7 +105,7 @@ export function ContractInference({ onTermsChange }: ContractInferenceProps) {
           <select
             value={terms.recognitionMethod}
             onChange={(e) => handleChange('recognitionMethod', e.target.value)}
-            className="w-full px-3 py-2 border border-border rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent bg-white"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent bg-white"
           >
             <option value="straight-line" className="text-gray-900">Straight-Line</option>
             <option value="proportional" className="text-gray-900">Proportional</option>

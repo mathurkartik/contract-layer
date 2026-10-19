@@ -51,8 +51,8 @@ export function InvoiceStream({ onInvoiceSelect, selectedId }: InvoiceStreamProp
             onClick={() => onInvoiceSelect?.(invoice)}
             className={`w-full text-left p-3 rounded-lg border transition-all ${
               selectedId === invoice.id
-                ? 'bg-accent bg-opacity-10 border-accent'
-                : 'bg-white border-border hover:border-accent/50'
+                ? 'bg-indigo-50 border-indigo-400'
+                : 'bg-white border-gray-200 hover:border-indigo-300'
             }`}
           >
             <div className="flex items-start justify-between mb-2">
@@ -65,11 +65,11 @@ export function InvoiceStream({ onInvoiceSelect, selectedId }: InvoiceStreamProp
                 <Clock className="w-4 h-4 text-amber-500" />
               )}
             </div>
-            <div className="text-xs text-muted-foreground mb-1">{invoice.date}</div>
+            <div className="text-xs text-gray-500 mb-1">{invoice.date}</div>
             <div className="text-lg font-semibold text-gray-900 mb-2">
               ${formatCurrency(invoice.amount)}
             </div>
-            <div className="text-xs text-muted-foreground italic">{invoice.servicePeriod}</div>
+            <div className="text-xs text-gray-500 italic">{invoice.servicePeriod}</div>
           </button>
         ))}
       </div>
