@@ -17,21 +17,21 @@ const mockInvoices: Invoice[] = [
     date: 'Jan 1, 2024',
     amount: 45000,
     status: 'paid',
-    servicePeriod: 'Covers Jan – Mar service period',
+    servicePeriod: 'Covers Jan – Mar 2024 service period',
   },
   {
     id: 'in_2def45',
     date: 'Apr 1, 2024',
     amount: 45000,
     status: 'paid',
-    servicePeriod: 'Covers Apr – Jun service period',
+    servicePeriod: 'Covers Apr – Jun 2024 service period',
   },
   {
     id: 'in_3ghi67',
     date: 'Jul 1, 2024',
     amount: 45000,
     status: 'unpaid',
-    servicePeriod: 'Covers Jul – Sep service period',
+    servicePeriod: 'Covers Jul – Sep 2024 service period',
   },
 ]
 

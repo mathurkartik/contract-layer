@@ -66,9 +66,9 @@ export function RecognitionSchedule({ contractTerms }: RecognitionScheduleProps)
   return (
     <div className="space-y-3">
       <h3 className="text-sm font-semibold text-foreground">Revenue Recognition Schedule</h3>
-      <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-        <p className="text-xs text-amber-900 leading-relaxed">
-          <span className="font-semibold">The ASC 606 Gap:</span> Stripe recorded $135,000 received across 3 quarterly invoices. ASC 606 requires $180,000 recognised evenly across 12 months. Contract Layer maps the gap — $45,000 still to invoice, $0 over-recognised.
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+        <p className="text-xs text-blue-900 leading-relaxed">
+          Stripe recorded $135,000 across 3 quarterly invoices. ASC 606 requires $180,000 recognised evenly across 12 months. Contract Layer maps the $45,000 gap — Q4 service revenue not yet invoiced.
         </p>
       </div>
       <div className="overflow-x-auto">
@@ -109,7 +109,7 @@ export function RecognitionSchedule({ contractTerms }: RecognitionScheduleProps)
         </table>
       </div>
       <p className="text-xs text-muted-foreground">
-        Every row is amber because quarterly invoicing never aligns with monthly recognition — this is the core problem Contract Layer solves.
+        Rows are highlighted in amber whenever invoiced amounts differ from recognised revenue.
       </p>
     </div>
   )
