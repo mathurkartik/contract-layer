@@ -15,14 +15,16 @@ interface ContractInferenceProps {
   onTermsChange?: (terms: ContractTerms) => void
 }
 
+const DEFAULT_CONTRACT_TERMS: ContractTerms = {
+  startDate: '2024-01-01',
+  endDate: '2024-12-31',
+  tcv: 180000,
+  billingFrequency: 'quarterly',
+  recognitionMethod: 'straight-line',
+}
+
 export function ContractInference({ onTermsChange }: ContractInferenceProps) {
-  const [terms, setTerms] = useState<ContractTerms>({
-    startDate: '2024-01-01',
-    endDate: '2024-12-31',
-    tcv: 180000,
-    billingFrequency: 'quarterly',
-    recognitionMethod: 'straight-line',
-  })
+  const [terms, setTerms] = useState<ContractTerms>(DEFAULT_CONTRACT_TERMS)
 
   const handleChange = (field: keyof ContractTerms, value: string | number) => {
     const updated = { ...terms, [field]: value }
