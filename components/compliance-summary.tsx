@@ -13,25 +13,25 @@ export function ComplianceSummary({ contractTerms }: ComplianceSummaryProps) {
   const [closePeriod, setClosePeriod] = useState('Q1 2024')
   const [isExpanded, setIsExpanded] = useState(false)
 
-  // Mock Q1 2024 amounts
-  const q1Revenue = 45000 // 3 months x 15,000
-  const q1Deferred = 10000
+  // Q1 2024: $45K invoice received, but only $45K recognized (3 months × $15K)
+  // In Q1, cash in = $45K, revenue earned = $45K, so deferred = $0 at quarter end
+  // But WITHIN Q1: Jan gets $45K cash, recognizes $15K → $30K deferred
+  // Feb: no cash, recognizes $15K → deferred drops to $15K
+  // Mar: no cash, recognizes $15K → deferred drops to $0
+  // Journal entry shows the quarter-end state
+  const q1Invoiced = 45000
+  const q1Recognised = 45000 // 3 × $15,000
 
   const journalEntries = [
     {
-      account: 'Revenue',
-      debit: q1Revenue,
+      account: 'Accounts Receivable',
+      debit: q1Invoiced,
       credit: 0,
     },
     {
-      account: 'Deferred Revenue',
+      account: 'Revenue (Recognised)',
       debit: 0,
-      credit: q1Deferred,
-    },
-    {
-      account: 'Accounts Receivable',
-      debit: 0,
-      credit: q1Revenue,
+      credit: q1Recognised,
     },
   ]
 

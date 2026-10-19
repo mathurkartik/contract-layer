@@ -114,7 +114,7 @@ export default function Page() {
               {/* Right Panel: Placeholder for visual balance */}
               <div className="bg-white rounded-lg border border-border p-6 shadow-sm">
                 <div className="space-y-3">
-                  <h3 className="text-sm font-semibold text-foreground">Contract Summary</h3>
+                  <h3 className="text-sm font-semibold text-gray-900">Contract Summary</h3>
                   <div className="space-y-2">
                     <div className="flex justify-between items-baseline">
                       <span className="text-xs text-muted-foreground">Annual TCV:</span>
@@ -124,13 +124,13 @@ export default function Page() {
                     </div>
                     <div className="flex justify-between items-baseline">
                       <span className="text-xs text-muted-foreground">Monthly Recognition:</span>
-                      <span className="text-lg font-bold text-foreground">
+                      <span className="text-lg font-bold text-gray-900">
                         ${formatCurrency(Math.round(contractTerms.tcv / 12))}
                       </span>
                     </div>
                     <div className="flex justify-between items-baseline">
                       <span className="text-xs text-muted-foreground">Period:</span>
-                      <span className="text-xs text-foreground font-medium">
+                      <span className="text-xs text-gray-900 font-medium">
                         {contractTerms.startDate} to {contractTerms.endDate}
                       </span>
                     </div>
@@ -207,7 +207,35 @@ export default function Page() {
               </button>
 
               <div className="flex gap-3">
-                <button className="px-6 py-3 border border-border text-foreground font-semibold rounded-lg hover:bg-muted transition-colors">
+                <button
+                  onClick={() => {
+                    const monthlyRec = Math.round(contractTerms.tcv / 12)
+                    const rows = [
+                      ['Month', 'Invoiced', 'Recognised', 'Deferred/Accrued'],
+                      ['Jan 2024', '45000', String(monthlyRec), String(45000 - monthlyRec)],
+                      ['Feb 2024', '0', String(monthlyRec), String(0 - monthlyRec)],
+                      ['Mar 2024', '0', String(monthlyRec), String(0 - monthlyRec)],
+                      ['Apr 2024', '45000', String(monthlyRec), String(45000 - monthlyRec)],
+                      ['May 2024', '0', String(monthlyRec), String(0 - monthlyRec)],
+                      ['Jun 2024', '0', String(monthlyRec), String(0 - monthlyRec)],
+                      ['Jul 2024', '45000', String(monthlyRec), String(45000 - monthlyRec)],
+                      ['Aug 2024', '0', String(monthlyRec), String(0 - monthlyRec)],
+                      ['Sep 2024', '0', String(monthlyRec), String(0 - monthlyRec)],
+                      ['Oct 2024', '0', String(monthlyRec), String(0 - monthlyRec)],
+                      ['Nov 2024', '0', String(monthlyRec), String(0 - monthlyRec)],
+                      ['Dec 2024', '0', String(monthlyRec), String(0 - monthlyRec)],
+                    ]
+                    const csv = rows.map(r => r.join(',')).join('\n')
+                    const blob = new Blob([csv], { type: 'text/csv' })
+                    const url = URL.createObjectURL(blob)
+                    const a = document.createElement('a')
+                    a.href = url
+                    a.download = 'asc606-recognition-report.csv'
+                    a.click()
+                    URL.revokeObjectURL(url)
+                  }}
+                  className="px-6 py-3 border border-border text-gray-900 font-semibold rounded-lg hover:bg-muted transition-colors"
+                >
                   Export Report
                 </button>
                 <button className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-accent-foreground font-semibold rounded-lg hover:opacity-90 transition-opacity">
