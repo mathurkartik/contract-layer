@@ -38,7 +38,7 @@ export function ContractInference({ onTermsChange }: ContractInferenceProps) {
         </h3>
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
           <p className="text-xs text-blue-900">
-            <span className="font-semibold">Detected contract:</span> ${formatCurrency(terms.tcv)} annual SaaS license, {new Date(terms.startDate + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })} – {new Date(terms.endDate + 'T00:00:00').toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}. Billing: {terms.billingFrequency}. Recognition method: {terms.recognitionMethod}.
+            <span className="font-semibold">Detected contract:</span> ${formatCurrency(terms.tcv)} annual SaaS license, {terms.startDate} – {terms.endDate}. Billing: {terms.billingFrequency}. Recognition method: {terms.recognitionMethod}.
           </p>
         </div>
       </div>
@@ -92,8 +92,8 @@ export function ContractInference({ onTermsChange }: ContractInferenceProps) {
             onChange={(e) => handleChange('billingFrequency', e.target.value)}
             className="w-full px-3 py-2 border border-border rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-accent focus:border-transparent bg-white"
           >
-            <option value="quarterly">Quarterly</option>
             <option value="monthly">Monthly</option>
+            <option value="quarterly">Quarterly</option>
             <option value="annual">Annual</option>
           </select>
         </div>

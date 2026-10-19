@@ -66,8 +66,8 @@ export function RecognitionSchedule({ contractTerms }: RecognitionScheduleProps)
   return (
     <div className="space-y-3">
       <h3 className="text-sm font-semibold text-foreground">Revenue Recognition Schedule</h3>
-      <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
-        <p className="text-xs text-amber-900 leading-relaxed">
+      <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4">
+        <p className="text-xs text-indigo-900 leading-relaxed">
           <span className="font-semibold">The ASC 606 Gap:</span> Stripe recorded $135,000 received across 3 quarterly invoices. ASC 606 requires $180,000 recognised evenly across 12 months. Contract Layer maps the gap — $45,000 still to invoice, $0 over-recognised.
         </p>
       </div>
@@ -86,7 +86,7 @@ export function RecognitionSchedule({ contractTerms }: RecognitionScheduleProps)
               <tr
                 key={idx}
                 className={`border-b border-border ${
-                  row.mismatch ? 'bg-amber-50' : 'hover:bg-muted/50'
+                  row.mismatch ? 'bg-indigo-50' : 'hover:bg-muted/50'
                 }`}
               >
                 <td className="px-3 py-2 text-foreground font-medium">{row.month}</td>
@@ -98,10 +98,10 @@ export function RecognitionSchedule({ contractTerms }: RecognitionScheduleProps)
                 </td>
                 <td
                   className={`text-right px-3 py-2 font-medium ${
-                    row.mismatch ? 'text-amber-700' : 'text-foreground'
+                    row.mismatch ? 'text-indigo-700' : 'text-foreground'
                   }`}
                 >
-                  {row.deferredAccrued > 0 ? '+' : row.deferredAccrued < 0 ? '-' : ''}{row.deferredAccrued !== 0 ? `$${formatCurrency(Math.abs(row.deferredAccrued))}` : '$0'}
+                  ${formatCurrency(row.deferredAccrued)}
                 </td>
               </tr>
             ))}
