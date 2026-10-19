@@ -38,9 +38,9 @@ export function ComplianceSummary({ contractTerms }: ComplianceSummaryProps) {
   return (
     <div className="space-y-4">
       <div className="flex items-center justify-between">
-        <h3 className="text-sm font-semibold text-foreground">ASC 606 Compliance Summary</h3>
+        <h3 className="text-sm font-semibold text-gray-900">ASC 606 Compliance Summary</h3>
         <div className="flex items-center gap-2">
-          <label className="text-xs font-medium text-foreground">Close Period:</label>
+          <label className="text-xs font-medium text-gray-900">Close Period:</label>
           <select
             value={closePeriod}
             onChange={(e) => setClosePeriod(e.target.value)}
@@ -76,11 +76,11 @@ export function ComplianceSummary({ contractTerms }: ComplianceSummaryProps) {
           onClick={() => setIsExpanded(!isExpanded)}
           className="flex items-center justify-between w-full p-3 bg-muted rounded-lg hover:bg-muted/80 transition-colors"
         >
-          <span className="text-sm font-semibold text-foreground">
+          <span className="text-sm font-semibold text-gray-900">
             {closePeriod} Journal Entry
           </span>
           <ChevronDown
-            className={`w-4 h-4 text-foreground transition-transform ${
+            className={`w-4 h-4 text-gray-900 transition-transform ${
               isExpanded ? 'rotate-180' : ''
             }`}
           />
@@ -91,19 +91,19 @@ export function ComplianceSummary({ contractTerms }: ComplianceSummaryProps) {
             <table className="w-full text-xs">
               <thead>
                 <tr className="bg-secondary border-b border-border">
-                  <th className="text-left px-3 py-2 font-semibold text-foreground">Account</th>
-                  <th className="text-right px-3 py-2 font-semibold text-foreground">Debit</th>
-                  <th className="text-right px-3 py-2 font-semibold text-foreground">Credit</th>
+                  <th className="text-left px-3 py-2 font-semibold text-gray-900">Account</th>
+                  <th className="text-right px-3 py-2 font-semibold text-gray-900">Debit</th>
+                  <th className="text-right px-3 py-2 font-semibold text-gray-900">Credit</th>
                 </tr>
               </thead>
               <tbody>
                 {journalEntries.map((entry, idx) => (
                   <tr key={idx} className="border-b border-border hover:bg-muted/30">
-                    <td className="px-3 py-2 text-foreground font-medium">{entry.account}</td>
-                    <td className="text-right px-3 py-2 text-foreground">
+                    <td className="px-3 py-2 text-gray-900 font-medium">{entry.account}</td>
+                    <td className="text-right px-3 py-2 text-gray-900">
                       {entry.debit > 0 ? `$${formatCurrency(entry.debit)}` : '—'}
                     </td>
-                    <td className="text-right px-3 py-2 text-foreground">
+                    <td className="text-right px-3 py-2 text-gray-900">
                       {entry.credit > 0 ? `$${formatCurrency(entry.credit)}` : '—'}
                     </td>
                   </tr>

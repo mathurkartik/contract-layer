@@ -57,7 +57,7 @@ export function RevenueDashboard({ contractTerms }: RevenueDashboardProps) {
                 <p className="text-xs text-muted-foreground font-medium mb-1">
                   {metric.label}
                 </p>
-                <p className="text-2xl font-bold text-foreground">
+                <p className="text-2xl font-bold text-gray-900">
                   ${formatCurrency(metric.value)}
                 </p>
               </div>
@@ -73,7 +73,7 @@ export function RevenueDashboard({ contractTerms }: RevenueDashboardProps) {
         <div className="bg-white rounded-lg border border-border p-4 shadow-sm">
           <div className="flex items-center gap-2 mb-4">
             <AlertCircle className="w-5 h-5 text-primary" />
-            <h3 className="text-sm font-semibold text-foreground">Deferred Revenue</h3>
+            <h3 className="text-sm font-semibold text-gray-900">Deferred Revenue</h3>
           </div>
           <div className="space-y-3">
             <div className="flex justify-between items-baseline">
@@ -92,7 +92,7 @@ export function RevenueDashboard({ contractTerms }: RevenueDashboardProps) {
         <div className="bg-white rounded-lg border border-border p-4 shadow-sm">
           <div className="flex items-center gap-2 mb-4">
             <CheckCircle2 className="w-5 h-5 text-primary" />
-            <h3 className="text-sm font-semibold text-foreground">Accrued Revenue</h3>
+            <h3 className="text-sm font-semibold text-gray-900">Accrued Revenue</h3>
           </div>
           <div className="space-y-3">
             <div className="flex justify-between items-baseline">
@@ -138,7 +138,7 @@ export function RevenueDashboard({ contractTerms }: RevenueDashboardProps) {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="bg-white rounded-lg border border-border p-4 shadow-sm">
           <p className="text-xs text-muted-foreground font-medium mb-2">Billing Pattern</p>
-          <p className="text-sm font-semibold text-foreground mb-1">Quarterly</p>
+          <p className="text-sm font-semibold text-gray-900 mb-1">Quarterly</p>
           <p className="text-xs text-muted-foreground">
             3 invoices of ${formatCurrency(quarterlyBilling)} sent in Jan, Apr, Jul
           </p>
@@ -146,7 +146,7 @@ export function RevenueDashboard({ contractTerms }: RevenueDashboardProps) {
 
         <div className="bg-white rounded-lg border border-border p-4 shadow-sm">
           <p className="text-xs text-muted-foreground font-medium mb-2">Recognition Method</p>
-          <p className="text-sm font-semibold text-foreground mb-1">Straight-Line</p>
+          <p className="text-sm font-semibold text-gray-900 mb-1">Straight-Line</p>
           <p className="text-xs text-muted-foreground">
             ${formatCurrency(monthlyRecognition)}/month over {Math.ceil(contractTerms.tcv / monthlyRecognition)} months
           </p>
@@ -154,7 +154,7 @@ export function RevenueDashboard({ contractTerms }: RevenueDashboardProps) {
 
         <div className="bg-white rounded-lg border border-border p-4 shadow-sm">
           <p className="text-xs text-muted-foreground font-medium mb-2">Contract Status</p>
-          <p className="text-sm font-semibold text-foreground mb-1">In Progress</p>
+          <p className="text-sm font-semibold text-gray-900 mb-1">In Progress</p>
           <p className="text-xs text-muted-foreground">
             {monthsElapsed} of 12 months completed
           </p>

@@ -33,7 +33,7 @@ export function ContractInference({ onTermsChange }: ContractInferenceProps) {
   return (
     <div className="space-y-4">
       <div>
-        <h3 className="text-sm font-semibold text-foreground mb-3">
+        <h3 className="text-sm font-semibold text-gray-900 mb-3">
           Contract Layer Inference
         </h3>
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-3 mb-4">
@@ -45,7 +45,7 @@ export function ContractInference({ onTermsChange }: ContractInferenceProps) {
 
       <div className="space-y-3">
         <div>
-          <label className="block text-xs font-medium text-foreground mb-1">
+          <label className="block text-xs font-medium text-gray-900 mb-1">
             Contract Start Date
           </label>
           <input
@@ -57,7 +57,7 @@ export function ContractInference({ onTermsChange }: ContractInferenceProps) {
         </div>
 
         <div>
-          <label className="block text-xs font-medium text-foreground mb-1">
+          <label className="block text-xs font-medium text-gray-900 mb-1">
             Contract End Date
           </label>
           <input
@@ -69,11 +69,11 @@ export function ContractInference({ onTermsChange }: ContractInferenceProps) {
         </div>
 
         <div>
-          <label className="block text-xs font-medium text-foreground mb-1">
+          <label className="block text-xs font-medium text-gray-900 mb-1">
             Total Contract Value (TCV)
           </label>
           <div className="flex items-center">
-            <span className="text-foreground mr-2">$</span>
+            <span className="text-gray-900 mr-2">$</span>
             <input
               type="number"
               value={terms.tcv}
@@ -84,7 +84,7 @@ export function ContractInference({ onTermsChange }: ContractInferenceProps) {
         </div>
 
         <div>
-          <label className="block text-xs font-medium text-foreground mb-1">
+          <label className="block text-xs font-medium text-gray-900 mb-1">
             Billing Frequency
           </label>
           <select
@@ -99,7 +99,7 @@ export function ContractInference({ onTermsChange }: ContractInferenceProps) {
         </div>
 
         <div>
-          <label className="block text-xs font-medium text-foreground mb-1">
+          <label className="block text-xs font-medium text-gray-900 mb-1">
             Recognition Method
           </label>
           <select

@@ -65,7 +65,7 @@ export function RecognitionSchedule({ contractTerms }: RecognitionScheduleProps)
 
   return (
     <div className="space-y-3">
-      <h3 className="text-sm font-semibold text-foreground">Revenue Recognition Schedule</h3>
+      <h3 className="text-sm font-semibold text-gray-900">Revenue Recognition Schedule</h3>
       <div className="bg-amber-50 border border-amber-200 rounded-lg p-4">
         <p className="text-xs text-amber-900 leading-relaxed">
           <span className="font-semibold">The ASC 606 Gap:</span> Stripe recorded $135,000 received across 3 quarterly invoices. ASC 606 requires $180,000 recognised evenly across 12 months. Contract Layer maps the gap — $45,000 still to invoice, $0 over-recognised.
@@ -75,10 +75,10 @@ export function RecognitionSchedule({ contractTerms }: RecognitionScheduleProps)
         <table className="w-full text-xs">
           <thead>
             <tr className="border-b border-border bg-muted">
-              <th className="text-left px-3 py-2 font-semibold text-foreground">Month</th>
-              <th className="text-right px-3 py-2 font-semibold text-foreground">Invoiced</th>
-              <th className="text-right px-3 py-2 font-semibold text-foreground">Recognised</th>
-              <th className="text-right px-3 py-2 font-semibold text-foreground">Deferred/Accrued</th>
+              <th className="text-left px-3 py-2 font-semibold text-gray-900">Month</th>
+              <th className="text-right px-3 py-2 font-semibold text-gray-900">Invoiced</th>
+              <th className="text-right px-3 py-2 font-semibold text-gray-900">Recognised</th>
+              <th className="text-right px-3 py-2 font-semibold text-gray-900">Deferred/Accrued</th>
             </tr>
           </thead>
           <tbody>
@@ -89,16 +89,16 @@ export function RecognitionSchedule({ contractTerms }: RecognitionScheduleProps)
                   row.mismatch ? 'bg-amber-50' : 'hover:bg-muted/50'
                 }`}
               >
-                <td className="px-3 py-2 text-foreground font-medium">{row.month}</td>
-                <td className="text-right px-3 py-2 text-foreground">
+                <td className="px-3 py-2 text-gray-900 font-medium">{row.month}</td>
+                <td className="text-right px-3 py-2 text-gray-900">
                   ${formatCurrency(row.invoiced)}
                 </td>
-                <td className="text-right px-3 py-2 text-foreground">
+                <td className="text-right px-3 py-2 text-gray-900">
                   ${formatCurrency(row.recognised)}
                 </td>
                 <td
                   className={`text-right px-3 py-2 font-medium ${
-                    row.mismatch ? 'text-amber-700' : 'text-foreground'
+                    row.mismatch ? 'text-amber-700' : 'text-gray-900'
                   }`}
                 >
                   {row.deferredAccrued > 0 ? '+' : row.deferredAccrued < 0 ? '-' : ''}{row.deferredAccrued !== 0 ? `$${formatCurrency(Math.abs(row.deferredAccrued))}` : '$0'}

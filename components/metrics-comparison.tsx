@@ -32,7 +32,7 @@ export function MetricsComparison({ contractTerms }: MetricsComparisonProps) {
   return (
     <div className="space-y-4">
       <div>
-        <h3 className="text-sm font-semibold text-foreground mb-4">Monthly Comparison</h3>
+        <h3 className="text-sm font-semibold text-gray-900 mb-4">Monthly Comparison</h3>
         <div className="space-y-3">
           {billingTimeline.map((item, idx) => {
             const invoiceWidth = (item.invoice / maxValue) * 100
@@ -42,7 +42,7 @@ export function MetricsComparison({ contractTerms }: MetricsComparisonProps) {
             return (
               <div key={idx} className="space-y-1">
                 <div className="flex justify-between items-center">
-                  <span className="text-xs font-medium text-foreground w-12">{item.month}</span>
+                  <span className="text-xs font-medium text-gray-900 w-12">{item.month}</span>
                   <span className="text-xs text-muted-foreground">
                     Inv: ${formatCurrency(item.invoice)} | Rec: ${formatCurrency(item.recognition)}
                   </span>
